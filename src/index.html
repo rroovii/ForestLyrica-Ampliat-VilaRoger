@@ -339,7 +339,7 @@ render();
         case "sword":
             if (mapLocation === 3){
               var jugadorFight = Math.floor(Math.random() * 100);
-              var dracFight = Math.floor(Math.random() * 100);
+              var dracFight = Math.floor(Math.random() * 1);
               console.log(dracFight + " drac" + "jugador :" + jugadorFight);
 
               if(jugadorFight >= dracFight){
@@ -366,7 +366,7 @@ render();
                 gameMessage = "You fumble with the stone in your pocket.";
             }
             break;
-        case "camera":
+        case "camera":  
             if (mapLocation === 9){
               gameMessage = "You take a photo to Thomas";
               gameMessage += " Thomas gives you a secret key in return!"
@@ -444,18 +444,22 @@ render();
       temple();
     }
     if (win){
+      console.log(win);
+      output.innerHTML = "You have won the game and left the forest of lyrica!!!";
+      gameMessage += "Congratulations!";
       image.src = "images/WIN.png";
-    output.innerHTML = "You have won the game and left the forest of lyrica!!!";
-    output.innerHTML += "Congratulations!";
     }
-    if (templeDins){
+
+    if(win == false){
+      if (templeDins){
       gameMessage = "You have entered the temple..."
       image.src = "images/templeperdins.png"
-    }
-    else{
+    } else {
       //location
       output.innerHTML = map[mapLocation];
       image.src = "images/" + images[mapLocation];
+    }
+
     }
 
     if(sortitdeltemple == true){
