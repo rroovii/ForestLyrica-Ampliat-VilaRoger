@@ -444,18 +444,18 @@ render();
       temple();
     }
     if (win){
-      image.src = "../images/WIN.png";
+      image.src = "images/WIN.png";
     output.innerHTML = "You have won the game and left the forest of lyrica!!!";
     output.innerHTML += "Congratulations!";
     }
     if (templeDins){
       gameMessage = "You have entered the temple..."
-      image.src = "../images/templeperdins.png"
+      image.src = "images/templeperdins.png"
     }
     else{
       //location
       output.innerHTML = map[mapLocation];
-      image.src = "../images/" + images[mapLocation];
+      image.src = "images/" + images[mapLocation];
     }
 
     if(sortitdeltemple == true){
